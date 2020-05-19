@@ -25,7 +25,13 @@ bash:
 	@${MAKE} run
 
 .PHONY: lint
-lint: ARGS=flake8 lab && isort -rc .
+lint: ARGS=flake8 lab
 export ARGS
 lint:
+	@${MAKE} run
+
+.PHONY: isort
+isort: ARGS=isort -rc lab
+export ARGS
+isort:
 	@${MAKE} run
